@@ -62,7 +62,7 @@ function WisataAlam(){
                                 <img
                                   className='wisata-card-img'
                                   alt={props.label}
-                                  src={props.img}
+                                  src={props.img.formats.thumbnail.url}
                                 />
                               </figure>
                               <div  className='wisata-card-info'>
@@ -80,7 +80,7 @@ function WisataAlam(){
                     <Popup
                         content={<>
                             <div className='wisata-popup-name'>{filteredCards[popupIndex].name}</div>
-                            <img className='wisata-popup-image' src={filteredCards[popupIndex].img} />
+                            <img className='wisata-popup-image' src={filteredCards[popupIndex].img.formats.thumbnail.url} />
                             <div className='wisata-popup-desc'>{filteredCards[popupIndex].desc}</div>
                             <div className='wisata-popup-price'>{filteredCards[popupIndex].price}</div>
                             <div className='wisata-popup-location'>{filteredCards[popupIndex].location}</div>
