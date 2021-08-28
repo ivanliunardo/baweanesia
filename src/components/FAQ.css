@@ -1,0 +1,33 @@
+.faq-container{
+    padding: 0 4rem 4rem 4rem;
+    height: 100vh;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-title{
+    padding-bottom: 4rem;
+}
+
+.faq-content{
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-content h2{
+    width: 50%;
+    padding-bottom: 0.5rem;
+}
+
+.faq-content h3{
+    width: 100%;
+    padding-bottom: 1rem;
+    text-align: justify;
+}
+
+@media screen and (max-width:1000px) {
+    .faq-content h2{
+        width:100%;
+    }
+}

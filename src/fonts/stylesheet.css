@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Hello Pirates';
+    src: url('HelloPirates.eot');
+    src: url('HelloPirates.eot?#iefix') format('embedded-opentype'),
+        url('HelloPirates.woff2') format('woff2'),
+        url('HelloPirates.woff') format('woff'),
+        url('HelloPirates.ttf') format('truetype'),
+        url('HelloPirates.svg#HelloPirates') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

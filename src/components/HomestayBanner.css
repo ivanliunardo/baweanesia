@@ -1,0 +1,50 @@
+.homestay{
+    padding: 0 4rem 4rem 4rem;
+    height: 100vh;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.homestay-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+}
+
+.homestay-title{
+    padding-bottom: 4rem;
+}
+
+.homestayimg-container{
+    width: 45%;
+}
+
+.homestayimg-container img{
+    width:100%;
+    min-width:50%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+}
+
+.text-content{
+        display: flex;
+        padding: 0.5rem;
+        text-align: justify;
+        align-items: center;
+        color: #26648E;
+    }
+
+@media screen and (max-width: 1000px) {
+    .homestay-container{
+        display:inline-block;
+    }
+    
+    .homestayimg-container{
+        width:100%;
+    }
+}
