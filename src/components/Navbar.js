@@ -76,11 +76,11 @@ function Navbar() {
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Daftar
+                Masuk
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--primary'>Daftar</Button>}
+          {button && <Button buttonStyle='btn--primary'><a  href='https://intense-peak-53882.herokuapp.com/admin/auth/login' className='btns'>Masuk</a></Button>}
         </div>
       </nav>
     </>

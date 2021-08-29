@@ -32,7 +32,6 @@ function VideoBanner() {
 
     return (
       <div>
-  
             <div className='hero-container'>
               <video src={`https://intense-peak-53882.herokuapp.com${getVideo.url}`} autoPlay loop muted />
                 <h1>{getTexts.title}</h1>
@@ -43,7 +42,9 @@ function VideoBanner() {
                 buttonStyle='btn--primary'
                 buttonSize='btn--large'
               >
+                <a  href='https://www.google.com/travel/things-to-do?dest_src=ut&tcfs=EhMKCS9tLzA2cGI2cxIGQmF3ZWFu&dest_mid=%2Fm%2F06pb6s&hl=en-ID&gl=id&g2lb=2502548%2C2503771%2C2503781%2C4258168%2C4270442%2C4306835%2C4317915%2C4371335%2C4401769%2C4419364%2C4429192%2C4515404%2C4545890%2C4596364%2C4597339%2C4605834%2C4610908%2C4617390%2C4270859%2C4284970%2C4291517#ttdm=-5.812992_112.714447_12&ttdmf=%252Fg%252F11clzr3tm7' target='_blank' className='btns'>
                 KUNJUNGI BAWEAN
+                </a>
               </Button>
               </div>
             </div>
