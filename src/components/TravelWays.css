@@ -1,6 +1,10 @@
 .cards {
-  padding: 0 4rem 4rem 4rem;
+  padding: 4rem;
   background: #fff;
+}
+
+h1 {
+  text-align: center;
 }
 
 .cards__container {
@@ -76,8 +80,8 @@
 }
 
 .cards__item__text {
-  color: #26648E;
-  font-size: large;
+  color: #252e48;
+  font-size: 18px;
   line-height: 24px;
 }
 
@@ -88,10 +92,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .cards{
-    height: 100vh;
-  }
-
   .cards__items {
     display: flex;
   }

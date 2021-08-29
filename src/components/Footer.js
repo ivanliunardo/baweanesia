@@ -3,22 +3,26 @@ import './Footer.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import {axios} from './axios';
+import Axios from 'axios'
 
 function Footer() {
-  const [footer, setFooter] = useState([]);
+  const [socmeds, setSocmeds] = useState([]);
   const [feedback, setFeedback] = useState({});
   const [formkey, setFormkey] = useState(10);
 
+  const fetchData = () => {
+    const socmedsAPI ='https://intense-peak-53882.herokuapp.com/socmeds'
+    const getSocmeds = Axios.get(socmedsAPI)
+    Axios.all([ getSocmeds]).then(
+        Axios.spread((...allData) => {
+            const allDataSocmeds =  allData[0].data;
+            setSocmeds(allDataSocmeds)
+            console.log(allDataSocmeds)
+        })
+    )
+}
   useEffect(() =>{
-    axios
-    .get("/footer")
-    .then(response => {
-        console.log("Response:", response)
-        setFooter(response.data)
-    })
-    .catch((err) => {
-        console.log("Error:", err)
-    })
+    fetchData()
 }, []);
 
   function submit(e){
@@ -34,16 +38,13 @@ function Footer() {
   }
 
   return (
-    <div>
-    {
-        footer.map(foot =>
           <div>
           <section className='wave' />
           <div className='footer-container'>
           <div className='footer-main'>
           <div data-aos='fade-up' className='footer-form'>
             <p className='footer-form-heading'>
-              {foot.title}
+              Bagikan Pengalamanmu Berkunjung di Pulau Bawean!
             </p>
             <div className='input-areas'>
               <form onSubmit={(e) => submit(e)}>
@@ -71,14 +72,12 @@ function Footer() {
                 <div className='footer-link-wrapper'>
                 <div class='footer-link-items'>
                   <Link to='/blog'><h2>Blog</h2></Link>
-                  <Link to='/sign-up'><h2>Masuk</h2></Link>
+                  <Link to='/sign-in'><h2>Masuk</h2></Link>
                 </div>
                 </div>
               </div>
             </div>
             </div>
-          {
-            foot.socials.map(soc=>
               <section class='social-media'>
                 <div class='social-media-wrap'>
                   <div class='footer-logo'>
@@ -90,7 +89,7 @@ function Footer() {
                   <div class='social-icons'>
                     <Link
                       class='social-icon-link facebook'
-                      to={soc.facebook}
+                      to={socmeds.facebook}
                       target='_blank'
                       aria-label='Facebook'
                     >
@@ -98,7 +97,7 @@ function Footer() {
                     </Link>
                     <Link
                       class='social-icon-link instagram'
-                      to={soc.instagram}
+                      to={socmeds.instagram}
                       target='_blank'
                       aria-label='Instagram'
                     >
@@ -106,39 +105,26 @@ function Footer() {
                     </Link>
                     <Link
                       class='social-icon-link youtube'
-                      to={soc.youtube}
+                      to={socmeds.youtube}
                       target='_blank'
                       aria-label='Youtube'
                     >
                       <i class='fab fa-youtube' />
                     </Link>
-                    <Link
+                    {/* <Link
                       class='social-icon-link twitter'
-                      to={soc.twitter}
+                      to={socmeds.twitter}
                       target='_blank'
                       aria-label='Twitter'
                     >
                       <i class='fab fa-twitter' />
-                    </Link>
-                    <Link
-                      class='social-icon-link linkedin'
-                      to={soc.linkedin}
-                      target='_blank'
-                      aria-label='LinkedIn'
-                    >
-                      <i class='fab fa-linkedin' />
-                    </Link>
+                    </Link> */}
                     </div>
                 </div>
               </section>
-              )
-            }
             </div>
             </div>
-        )
-    }
-    </div>
-);
-}
+  )
+                  }
 
-export default Footer;
+export default Footer
